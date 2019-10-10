@@ -1,28 +1,22 @@
 {
   "restaurant": [
     {
-      "coustPLate": 150,
       "namePLate": "Cheeskake",
+      "coustPLate": "150",
       "category": "dessert",
       "id": 1
     },
     {
-      "coustPLate": 200,
+      "coustPLate": "200",
       "namePLate": "Rib Eyes 400g",
       "category": "cut",
       "id": 2
     },
     {
-      "namePLate": "Sesar saled",
-      "coustPLate": "100",
+      "namePLate": "Sesar Saled",
+      "coustPLate": "22",
       "category": "saled",
       "id": 3
-    },
-    {
-      "namePLate": "Chocolet Kake",
-      "coustPLate": "50",
-      "category": "dessert",
-      "id": 4
     }
   ]
 }

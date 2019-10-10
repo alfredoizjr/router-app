@@ -2,8 +2,9 @@ import React,{useState} from 'react';
 import axios from 'axios';
 import Error from './Error';
 import Swal from 'sweetalert2'
+import {withRouter } from 'react-router-dom';
 
-const AddProducts = () => {
+const AddProducts = ({history,setReloadQuery}) => {
 
     const [namePLate,setNamePLate] = useState('');
     const [coustPLate,setCoustPLate] = useState('');
@@ -39,6 +40,8 @@ const AddProducts = () => {
         })
         .catch(error => console.log(error));
 
+        setReloadQuery(true);
+        history.push('/products');
     }
 
     return ( 
@@ -133,4 +136,4 @@ const AddProducts = () => {
      );
 }
  
-export default AddProducts;
+export default withRouter(AddProducts);
