@@ -1,27 +1,43 @@
 import React,{useState} from 'react';
 import axios from 'axios';
 import Error from './Error';
+import Swal from 'sweetalert2'
 
 const AddProducts = () => {
 
     const [namePLate,setNamePLate] = useState('');
-    const [pricePLate,setPricePLate] = useState('');
-    const [categorie,setCategorie] = useState('');
+    const [coustPLate,setCoustPLate] = useState('');
+    const [category,setcategory] = useState('');
     const [error, setError] = useState(false);
 
     const handleRadio = e => {
-        setCategorie(e.target.value);
+        setcategory(e.target.value);
     }
 
     const handleSubmit = e => {
         e.preventDefault();
 
-        if(!namePLate || !pricePLate || !categorie) {
+        if(namePLate === '' || coustPLate === '' || category === '') {
             setError(true);
             return;
         }
 
         setError(false);
+        const url =`http://localhost:4000/restaurant`
+        axios.post(url,{
+            namePLate,
+            coustPLate,
+            category
+        }).then(response =>{
+            if(response.status === 201 ) {
+                Swal.fire(
+                    'Good job!',
+                    'The product was cretate!',
+                    'success'
+                  )
+            }
+        })
+        .catch(error => console.log(error));
 
     }
 
@@ -53,7 +69,7 @@ const AddProducts = () => {
                     className="form-control" 
                     name="price"
                     placeholder="Price PLate"
-                    onChange={e => setPricePLate(e.target.value)}
+                    onChange={e => setCoustPLate(e.target.value)}
                 />
             </div>
 
