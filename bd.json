@@ -1,0 +1,16 @@
+{
+    "restaurant": [
+        {
+            "coustPLate": 150,
+            "namePLate": "Cheeskake",
+            "category": "dessert",
+            "id": 1
+        },
+        {
+            "coustPLate": 200,
+            "namePLate": "Rib Eyes 400g",
+            "category": "cut",
+            "id": 2
+        }
+    ]
+}
